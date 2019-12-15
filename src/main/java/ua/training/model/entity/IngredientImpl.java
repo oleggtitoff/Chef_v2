@@ -1,17 +1,16 @@
 package ua.training.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.ToString;
-
-@Getter
-@AllArgsConstructor
-@ToString
 public abstract class IngredientImpl implements Ingredient {
     private String name;
     private long mass;
-    private long caloriesIn1KG;
+    private long caloriesIn1G;
     private long calories;
+
+    IngredientImpl(String name, long mass, long caloriesIn1G) {
+        this.name = name;
+        this.mass = mass;
+        this.caloriesIn1G = caloriesIn1G;
+    }
 
     @Override
     public String name() {
@@ -29,7 +28,7 @@ public abstract class IngredientImpl implements Ingredient {
     }
 
     @Override
-    public long caloriesIn1KG() {
+    public long caloriesIn1G() {
         return 0;
     }
 }
