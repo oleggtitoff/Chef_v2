@@ -34,4 +34,12 @@ public class VegetableTest {
         Assert.assertFalse(isClean);
     }
 
+    @Test
+    public void testPrepareForSalad() {
+        vegetable.prepareForSalad();
+        boolean isClean = vegetable.isPrepared();
+
+        Assert.assertTrue(isClean);
+    }
+
 }

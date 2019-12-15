@@ -14,7 +14,7 @@ public class Vegetable extends IngredientImpl implements Ingredient {
 
     @Override
     public void prepareForSalad() {
-        // TODO
+        isClean = true;
     }
 
     public boolean getIsClean() {
