@@ -29,4 +29,11 @@ public class AdditionalIngredientTest {
         Assert.assertEquals(1000, caloriesInThisMass);
     }
 
+    @Test
+    public void testCheckIfIsOpen() {
+        boolean isClean = additionalIngredient.getIsOpen();
+
+        Assert.assertFalse(isClean);
+    }
+
 }

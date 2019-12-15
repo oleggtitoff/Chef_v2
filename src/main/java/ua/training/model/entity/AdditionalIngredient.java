@@ -9,11 +9,16 @@ public class AdditionalIngredient extends IngredientImpl implements Ingredient {
 
     @Override
     public boolean isPrepared() {
-        return false;   // TODO
+        return isOpen;
     }
 
     @Override
     public void prepareForSalad() {
         // TODO
     }
+
+    public boolean getIsOpen() {
+        return isOpen;
+    }
+
 }
