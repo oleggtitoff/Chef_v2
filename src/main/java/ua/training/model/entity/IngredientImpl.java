@@ -57,4 +57,14 @@ public abstract class IngredientImpl implements Ingredient {
         return calories;
     }
 
+    @Override
+    public String toString() {
+        return "IngredientImpl{" +
+                "name='" + name + '\'' +
+                ", mass=" + mass +
+                ", caloriesIn1G=" + caloriesIn1G +
+                ", calories=" + calories +
+                '}';
+    }
+
 }
