@@ -27,4 +27,11 @@ public class VegetableTest {
         Assert.assertEquals(1000, caloriesInThisMass);
     }
 
+    @Test
+    public void testCheckIfIsPrepared() {
+        boolean isClean = vegetable.isPrepared();
+
+        Assert.assertFalse(isClean);
+    }
+
 }
