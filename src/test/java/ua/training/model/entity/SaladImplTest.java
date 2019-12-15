@@ -47,4 +47,14 @@ public class SaladImplTest {
         Assert.assertEquals(5000, ingredients.get(1).caloriesIn1G());
     }
 
+    @Test
+    public void testSort() {
+        salad.sort();
+
+        Assert.assertEquals("Salt", salad.allIngredients().get(0).name());
+        Assert.assertEquals("Carrot", salad.allIngredients().get(1).name());
+        Assert.assertEquals("Sauce", salad.allIngredients().get(2).name());
+        Assert.assertEquals("Potato", salad.allIngredients().get(3).name());
+    }
+
 }

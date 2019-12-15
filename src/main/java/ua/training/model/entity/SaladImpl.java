@@ -1,6 +1,7 @@
 package ua.training.model.entity;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -52,7 +53,9 @@ public class SaladImpl implements Salad {
 
     @Override
     public void sort() {
-        //TODO
+        ingredients = ingredients.stream()
+                .sorted(Comparator.comparingLong(Ingredient::caloriesIn1G))
+                .collect(Collectors.toList());
     }
 
     public long getTotalCalories() {
