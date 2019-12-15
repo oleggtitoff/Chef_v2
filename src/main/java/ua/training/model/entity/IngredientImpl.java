@@ -12,6 +12,10 @@ public abstract class IngredientImpl implements Ingredient {
         this.caloriesIn1G = caloriesIn1G;
     }
 
+    long calculateCaloriesInMass(long mass, long caloriesIn1G) {
+        return mass * caloriesIn1G;
+    }
+
     @Override
     public String name() {
         return name;
@@ -41,7 +45,7 @@ public abstract class IngredientImpl implements Ingredient {
         return name;
     }
 
-    public long getMass() {
+    long getMass() {
         return mass;
     }
 

@@ -20,4 +20,11 @@ public class VegetableTest {
         Assert.assertEquals(250, mass);
     }
 
+    @Test
+    public void testCalculateCaloriesInMass() {
+        long caloriesInThisMass = vegetable.calculateCaloriesInMass(100, 10);
+
+        Assert.assertEquals(1000, caloriesInThisMass);
+    }
+
 }
