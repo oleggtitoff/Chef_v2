@@ -22,6 +22,14 @@ public class SaladImplTest {
     }
 
     @Test
+    public void testAddExistingIngredient() {
+        salad.addIngredient(new Vegetable("Carrot", 100, 3100));
+
+        Assert.assertEquals(4, salad.allIngredients().size());
+        Assert.assertEquals(350, salad.allIngredients().get(0).mass());
+    }
+
+    @Test
     public void testGetTotalKCalories() {
         long totalKCalories = salad.getTotalCalories();
 

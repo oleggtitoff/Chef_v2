@@ -2,6 +2,7 @@ package ua.training.model.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class SaladImpl implements Salad {
     private List<Ingredient> ingredients = new ArrayList<>();
@@ -9,8 +10,20 @@ public class SaladImpl implements Salad {
 
     @Override
     public void addIngredient(Ingredient ingredient) {
-        ingredients.add(ingredient);
+        Optional<Ingredient> optionalIngredient = findIngredientInSalad(ingredient);
+
+        if (optionalIngredient.isPresent()) {
+            optionalIngredient.get().addMore(ingredient.mass());
+        } else {
+            ingredients.add(ingredient);
+        }
         addCaloriesToTotal(ingredient);
+    }
+
+    private Optional<Ingredient> findIngredientInSalad(Ingredient newIngredient) {
+        return ingredients.stream()
+                .filter(ingredient -> ingredient.name().equals(newIngredient.name()))
+                .findAny();
     }
 
     private void addCaloriesToTotal(Ingredient ingredient) {
