@@ -21,4 +21,12 @@ public class AdditionalIngredient extends IngredientImpl implements Ingredient {
         return isOpen;
     }
 
+    @Override
+    public String toString() {
+        return "AdditionalIngredient{" +
+                super.toString() +
+                ", isOpen=" + isOpen +
+                '}';
+    }
+
 }
