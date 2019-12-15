@@ -21,4 +21,9 @@ public class Vegetable extends IngredientImpl implements Ingredient {
     public void prepareForSalad() {
         // TODO
     }
+
+    public boolean getIsClean() {
+        return isClean;
+    }
+
 }
