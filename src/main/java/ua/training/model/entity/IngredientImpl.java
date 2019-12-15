@@ -14,21 +14,38 @@ public abstract class IngredientImpl implements Ingredient {
 
     @Override
     public String name() {
-        return null;
+        return name;
     }
 
     @Override
     public long mass() {
-        return 0;
+        return mass;
     }
 
     @Override
     public long calories() {
-        return 0;
+        return calories;
     }
 
     @Override
     public long caloriesIn1G() {
-        return 0;
+        return caloriesIn1G;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public long getMass() {
+        return mass;
+    }
+
+    public long getCaloriesIn1G() {
+        return caloriesIn1G;
+    }
+
+    public long getCalories() {
+        return calories;
+    }
+
 }
