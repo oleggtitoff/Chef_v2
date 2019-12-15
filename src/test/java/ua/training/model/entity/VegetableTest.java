@@ -28,8 +28,8 @@ public class VegetableTest {
     }
 
     @Test
-    public void testCheckIfIsPrepared() {
-        boolean isClean = vegetable.isPrepared();
+    public void testCheckIfIsClean() {
+        boolean isClean = vegetable.getIsClean();
 
         Assert.assertFalse(isClean);
     }
@@ -37,7 +37,7 @@ public class VegetableTest {
     @Test
     public void testPrepareForSalad() {
         vegetable.prepareForSalad();
-        boolean isClean = vegetable.isPrepared();
+        boolean isClean = vegetable.getIsClean();
 
         Assert.assertTrue(isClean);
     }
