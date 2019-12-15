@@ -21,4 +21,12 @@ public class Vegetable extends IngredientImpl implements Ingredient {
         return isClean;
     }
 
+    @Override
+    public String toString() {
+        return "Vegetable{" +
+                super.toString() +
+                ", isClean=" + isClean +
+                '}';
+    }
+
 }
