@@ -16,9 +16,9 @@ public class AdditionalIngredientTest {
     @Test
     public void testAddMore() {
         additionalIngredient.addMore(150);
-        long mass = additionalIngredient.getMass();
 
-        Assert.assertEquals(230, mass);
+        Assert.assertEquals(230, additionalIngredient.getMass());
+        Assert.assertEquals(1380000, additionalIngredient.getCalories());
     }
 
     @Test

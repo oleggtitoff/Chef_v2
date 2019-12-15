@@ -40,6 +40,7 @@ public abstract class IngredientImpl implements Ingredient {
     @Override
     public void addMore(long mass) {
         this.mass += mass;
+        calories = calculateCaloriesInMass(this.mass, caloriesIn1G);
     }
 
     public String getName() {

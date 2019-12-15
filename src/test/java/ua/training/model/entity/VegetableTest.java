@@ -15,9 +15,9 @@ public class VegetableTest {
     @Test
     public void testAddMore() {
         vegetable.addMore(150);
-        long mass = vegetable.getMass();
 
-        Assert.assertEquals(250, mass);
+        Assert.assertEquals(250, vegetable.getMass());
+        Assert.assertEquals(250000, vegetable.getCalories());
     }
 
     @Test
