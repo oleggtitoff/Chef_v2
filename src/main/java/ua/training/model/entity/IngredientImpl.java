@@ -10,6 +10,7 @@ public abstract class IngredientImpl implements Ingredient {
         this.name = name;
         this.mass = mass;
         this.caloriesIn1G = caloriesIn1G;
+        calories = calculateCaloriesInMass(mass, caloriesIn1G);
     }
 
     long calculateCaloriesInMass(long mass, long caloriesIn1G) {

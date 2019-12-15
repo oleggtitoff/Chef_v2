@@ -18,7 +18,14 @@ public class SaladImplTest {
 
     @Test
     public void testAddIngredient() {
-        Assert.assertEquals(4, salad.getAllIngredients().size());
+        Assert.assertEquals(4, salad.allIngredients().size());
+    }
+
+    @Test
+    public void testGetTotalKCalories() {
+        long totalKCalories = salad.getTotalCalories();
+
+        Assert.assertEquals(5275000, totalKCalories);
     }
 
 }

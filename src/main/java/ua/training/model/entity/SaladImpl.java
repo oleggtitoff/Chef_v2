@@ -10,26 +10,35 @@ public class SaladImpl implements Salad {
     @Override
     public void addIngredient(Ingredient ingredient) {
         ingredients.add(ingredient);
+        addCaloriesToTotal(ingredient);
+    }
+
+    private void addCaloriesToTotal(Ingredient ingredient) {
+        totalCalories += ingredient.calories();
     }
 
     @Override
-    public long getTotalCalories() {
-        return 0;   //TODO
+    public long totalCalories() {
+        return totalCalories;
     }
 
     @Override
-    public List<Ingredient> getAllIngredients() {
+    public List<Ingredient> allIngredients() {
         return ingredients;
     }
 
     @Override
-    public List<Ingredient> getIngredientsByCaloriesRange() {
+    public List<Ingredient> ingredientsByCaloriesRange() {
         return null;    //TODO
     }
 
     @Override
     public void sort() {
         //TODO
+    }
+
+    public long getTotalCalories() {
+        return totalCalories;
     }
 
 }
