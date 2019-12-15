@@ -36,4 +36,12 @@ public class AdditionalIngredientTest {
         Assert.assertFalse(isClean);
     }
 
+    @Test
+    public void testPrepareForSalad() {
+        additionalIngredient.prepareForSalad();
+        boolean isClean = additionalIngredient.getIsOpen();
+
+        Assert.assertTrue(isClean);
+    }
+
 }

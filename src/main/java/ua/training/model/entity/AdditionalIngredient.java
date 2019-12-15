@@ -14,7 +14,7 @@ public class AdditionalIngredient extends IngredientImpl implements Ingredient {
 
     @Override
     public void prepareForSalad() {
-        // TODO
+        isOpen = true;
     }
 
     public boolean getIsOpen() {
