@@ -21,4 +21,12 @@ public class AdditionalIngredientTest {
         Assert.assertEquals(230, mass);
     }
 
+    @Test
+    public void testCalculateCaloriesInMass() {
+        long caloriesInThisMass
+                = additionalIngredient.calculateCaloriesInMass(100, 10);
+
+        Assert.assertEquals(1000, caloriesInThisMass);
+    }
+
 }
