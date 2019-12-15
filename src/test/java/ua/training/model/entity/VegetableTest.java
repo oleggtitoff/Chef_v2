@@ -7,4 +7,17 @@ import org.junit.Test;
 public class VegetableTest {
     private Vegetable vegetable;
 
+    @Before
+    public void createVegetable() {
+        vegetable = new Vegetable("Potato", 100, 1000);
+    }
+
+    @Test
+    public void testAddMore() {
+        vegetable.addMore(150);
+        long mass = vegetable.getMass();
+
+        Assert.assertEquals(250, mass);
+    }
+
 }

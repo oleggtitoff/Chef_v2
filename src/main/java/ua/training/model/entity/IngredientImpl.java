@@ -32,6 +32,11 @@ public abstract class IngredientImpl implements Ingredient {
         return caloriesIn1G;
     }
 
+    @Override
+    public void addMore(long mass) {
+        this.mass += mass;
+    }
+
     public String getName() {
         return name;
     }
