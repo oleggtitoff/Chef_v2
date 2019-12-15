@@ -6,6 +6,6 @@ public interface Salad {
     void addIngredient(Ingredient ingredient);
     long totalCalories();
     List<Ingredient> allIngredients();
-    List<Ingredient> ingredientsByCaloriesRange();
+    List<Ingredient> ingredientsByCaloriesRange(long minValue, long maxValue);
     void sort();
 }

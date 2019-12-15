@@ -3,6 +3,7 @@ package ua.training.model.entity;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class SaladImpl implements Salad {
     private List<Ingredient> ingredients = new ArrayList<>();
@@ -41,8 +42,12 @@ public class SaladImpl implements Salad {
     }
 
     @Override
-    public List<Ingredient> ingredientsByCaloriesRange() {
-        return null;    //TODO
+    public List<Ingredient> ingredientsByCaloriesRange(long minValue,
+                                                       long maxValue) {
+        return ingredients.stream()
+                .filter(ingredient -> ingredient.caloriesIn1G() >= minValue
+                        && ingredient.caloriesIn1G() <= maxValue)
+                .collect(Collectors.toList());
     }
 
     @Override

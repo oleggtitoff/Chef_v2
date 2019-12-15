@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
 public class SaladImplTest {
     private SaladImpl salad;
 
@@ -34,6 +36,15 @@ public class SaladImplTest {
         long totalKCalories = salad.getTotalCalories();
 
         Assert.assertEquals(5275000, totalKCalories);
+    }
+
+    @Test
+    public void testGetIngredientsByCaloriesRange() {
+        List<Ingredient> ingredients = salad.ingredientsByCaloriesRange(4000, 8000);
+
+        Assert.assertEquals(2, ingredients.size());
+        Assert.assertEquals(8000, ingredients.get(0).caloriesIn1G());
+        Assert.assertEquals(5000, ingredients.get(1).caloriesIn1G());
     }
 
 }
