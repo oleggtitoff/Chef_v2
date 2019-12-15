@@ -1,6 +1,8 @@
 package ua.training.model.entity;
 
+import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Test;
 
 public class AdditionalIngredientTest {
     private AdditionalIngredient additionalIngredient;
@@ -11,6 +13,12 @@ public class AdditionalIngredientTest {
                 = new AdditionalIngredient("Mayonnaise", 80, 6000);
     }
 
+    @Test
+    public void testAddMore() {
+        additionalIngredient.addMore(150);
+        long mass = additionalIngredient.getMass();
 
+        Assert.assertEquals(230, mass);
+    }
 
 }
