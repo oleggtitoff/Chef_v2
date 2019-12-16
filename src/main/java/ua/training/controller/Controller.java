@@ -8,6 +8,7 @@ import ua.training.view.StringsContainer;
 import ua.training.view.View;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public class Controller {
@@ -24,17 +25,22 @@ public class Controller {
 
     public void processUser() {
         addIngredients();
+        view.printMessage(view.getBundleString(StringsContainer.SALAD_WORD));
+        view.printMessage(view.getBundleString(StringsContainer.INGREDIENTS_MESSAGE));
+        printIngredientsList(salad.allIngredients());
 
-        view.printMessage("Before sort: " + salad.toString());
         salad.sort();
-        view.printMessage("After sort: " + salad.toString());
+        view.printMessage(view.getBundleString(StringsContainer.SORT_MESSAGE));
+        view.printMessage(view.getBundleString(StringsContainer.INGREDIENTS_MESSAGE));
+        printIngredientsList(salad.allIngredients());
 
-        view.printMessage("In range [1900-4000]: "
-                + salad.ingredientsByCaloriesRange(1900, 4000));
+        view.printMessage(view.getBundleString(StringsContainer.RANGE_MESSAGE));
+        printIngredientsList(salad.ingredientsByCaloriesRange(1900, 4000));
 
-
-        view.printMessage("Total calories: " + salad.totalCalories());
-        view.printMessage("All ingredients: " + salad.allIngredients());
+        view.printMessage(view.concatenationString(
+                view.getBundleString(StringsContainer.TOTAL_CALORIES_MESSAGE),
+                StringsContainer.SPACE_SIGN,
+                String.valueOf(salad.totalCalories())));
     }
 
     private void addIngredients() {
@@ -54,14 +60,27 @@ public class Controller {
                 ));
     }
 
+    private void printIngredientsList(List<Ingredient> ingredients) {
+        ingredients.forEach(ingredient -> {
+                    if (ingredient instanceof Vegetable) {
+                        view.printMessage(getVegetableString(ingredient));
+                    } else {
+                        view.printMessage(getAdditionalIngredientString(ingredient));
+                    }
+                });
+
+    }
+
     private String getVegetableString(Ingredient ingredient) {
-        return view.concatenationString(StringsContainer.VEGETABLE_WORD
-                + getIngredientString(ingredient));
+        return view.concatenationString(
+                view.getBundleString(StringsContainer.VEGETABLE_WORD)
+                        + getIngredientString(ingredient));
     }
 
     private String getAdditionalIngredientString(Ingredient ingredient) {
-        return view.concatenationString(StringsContainer.ADDITIONAL_INGREDIENT_WORD
-                + getIngredientString(ingredient));
+        return view.concatenationString(
+                view.getBundleString(StringsContainer.ADDITIONAL_INGREDIENT_WORD)
+                        + getIngredientString(ingredient));
     }
 
     private String getIngredientString(Ingredient ingredient) {
