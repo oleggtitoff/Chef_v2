@@ -65,7 +65,7 @@ public class SaladImpl implements Salad {
     @Override
     public String toString() {
         return "SaladImpl{" +
-                "ingredients=" + allIngredientsToString() +
+                "ingredients=\n" + allIngredientsToString() +
                 "totalCalories=" + totalCalories +
                 '}';
     }

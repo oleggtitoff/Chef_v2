@@ -1,19 +1,22 @@
 package ua.training.controller;
 
 import ua.training.model.entity.AdditionalIngredient;
-import ua.training.model.entity.Ingredient;
 import ua.training.model.entity.Salad;
 import ua.training.model.entity.Vegetable;
 import ua.training.view.StringsContainer;
 import ua.training.view.View;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Controller {
     private Salad salad;
     private View view;
 
     public Controller(Salad salad, View view) {
+        Objects.requireNonNull(salad);
+        Objects.requireNonNull(view);
+
         this.salad = salad;
         this.view = view;
     }
