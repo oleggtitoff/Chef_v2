@@ -1,5 +1,6 @@
 package ua.training.view;
 
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -11,4 +12,15 @@ public class View {
     //private static final Locale locale = new Locale("uk", "UA");
     public static final ResourceBundle bundle = ResourceBundle.getBundle(
             MESSAGES_BUNDLE_NAME, locale);
+
+    public void printMessage (String message){
+        System.out.println(message);
+    }
+
+    public String concatenationString (String... messages){
+        StringBuilder concatString = new StringBuilder();
+
+        Arrays.stream(messages).forEach(concatString::append);
+        return concatString.toString();
+    }
 }
