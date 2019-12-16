@@ -1,6 +1,7 @@
 package ua.training.controller;
 
 import ua.training.model.entity.AdditionalIngredient;
+import ua.training.model.entity.Ingredient;
 import ua.training.model.entity.Salad;
 import ua.training.model.entity.Vegetable;
 import ua.training.view.StringsContainer;
@@ -51,6 +52,23 @@ public class Controller {
                                 input.getMass(),
                                 input.getCaloriesIn1G())
                 ));
+    }
+
+    private String getIngredientString(Ingredient ingredient) {
+        return view.concatenationString(
+                StringsContainer.OPEN_CURLY_BRACE
+                        + view.getBundleString(StringsContainer.NAME_WORD)
+                        + StringsContainer.EQUAL_SIGN + ingredient.name()
+                        + StringsContainer.COMMA_SIGN + StringsContainer.SPACE_SIGN
+                        + view.getBundleString(StringsContainer.MASS_WORD)
+                        + StringsContainer.EQUAL_SIGN + ingredient.mass()
+                        + StringsContainer.COMMA_SIGN + StringsContainer.SPACE_SIGN
+                        + view.getBundleString(StringsContainer.CALORIES_IN_1_G_WORD)
+                        + StringsContainer.EQUAL_SIGN + ingredient.caloriesIn1G()
+                        + StringsContainer.COMMA_SIGN + StringsContainer.SPACE_SIGN
+                        + view.getBundleString(StringsContainer.CALORIES_WORD)
+                        + StringsContainer.EQUAL_SIGN + ingredient.calories()
+        );
     }
 
 }
