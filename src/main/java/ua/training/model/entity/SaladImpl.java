@@ -62,4 +62,19 @@ public class SaladImpl implements Salad {
         return totalCalories;
     }
 
+    @Override
+    public String toString() {
+        return "SaladImpl{" +
+                "ingredients=" + allIngredientsToString() +
+                ", totalCalories=" + totalCalories +
+                '}';
+    }
+
+    private String allIngredientsToString() {
+        StringBuilder allIngredients = new StringBuilder();
+
+        ingredients.forEach(ingredient -> allIngredients.append(ingredient.toString()));
+        return allIngredients.toString();
+    }
+
 }
