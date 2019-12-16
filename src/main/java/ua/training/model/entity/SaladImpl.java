@@ -17,6 +17,7 @@ public class SaladImpl implements Salad {
         if (optionalIngredient.isPresent()) {
             optionalIngredient.get().addMore(ingredient.mass());
         } else {
+            checkAndPrepare(ingredient);
             ingredients.add(ingredient);
         }
         addCaloriesToTotal(ingredient);
@@ -26,6 +27,12 @@ public class SaladImpl implements Salad {
         return ingredients.stream()
                 .filter(ingredient -> ingredient.name().equals(newIngredient.name()))
                 .findAny();
+    }
+
+    private void checkAndPrepare(Ingredient ingredient) {
+        if (!ingredient.isPrepared()) {
+            ingredient.prepareForSalad();
+        }
     }
 
     private void addCaloriesToTotal(Ingredient ingredient) {
