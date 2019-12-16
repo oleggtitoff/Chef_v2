@@ -54,6 +54,16 @@ public class Controller {
                 ));
     }
 
+    private String getVegetableString(Ingredient ingredient) {
+        return view.concatenationString(StringsContainer.VEGETABLE_WORD
+                + getIngredientString(ingredient));
+    }
+
+    private String getAdditionalIngredientString(Ingredient ingredient) {
+        return view.concatenationString(StringsContainer.ADDITIONAL_INGREDIENT_WORD
+                + getIngredientString(ingredient));
+    }
+
     private String getIngredientString(Ingredient ingredient) {
         return view.concatenationString(
                 StringsContainer.OPEN_CURLY_BRACE
@@ -68,6 +78,7 @@ public class Controller {
                         + StringsContainer.COMMA_SIGN + StringsContainer.SPACE_SIGN
                         + view.getBundleString(StringsContainer.CALORIES_WORD)
                         + StringsContainer.EQUAL_SIGN + ingredient.calories()
+                        + StringsContainer.CLOSE_CURLY_BRACE
         );
     }
 
