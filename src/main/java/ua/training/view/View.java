@@ -10,11 +10,15 @@ public class View {
     private static final Locale locale = new Locale("en", "US");
     // Ukrainian
     //private static final Locale locale = new Locale("uk", "UA");
-    public static final ResourceBundle bundle = ResourceBundle.getBundle(
+    private static final ResourceBundle bundle = ResourceBundle.getBundle(
             MESSAGES_BUNDLE_NAME, locale);
 
     public void printMessage (String message){
         System.out.println(message);
+    }
+
+    public String getBundleString(String message) {
+        return bundle.getString(message);
     }
 
     public String concatenationString (String... messages){
