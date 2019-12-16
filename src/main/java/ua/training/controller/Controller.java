@@ -13,6 +13,11 @@ public class Controller {
     private Salad salad;
     private View view;
 
+    public Controller(Salad salad, View view) {
+        this.salad = salad;
+        this.view = view;
+    }
+
     public void processUser() {
         addIngredients();
 

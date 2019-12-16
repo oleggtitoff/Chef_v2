@@ -66,14 +66,17 @@ public class SaladImpl implements Salad {
     public String toString() {
         return "SaladImpl{" +
                 "ingredients=" + allIngredientsToString() +
-                ", totalCalories=" + totalCalories +
+                "totalCalories=" + totalCalories +
                 '}';
     }
 
     private String allIngredientsToString() {
         StringBuilder allIngredients = new StringBuilder();
 
-        ingredients.forEach(ingredient -> allIngredients.append(ingredient.toString()));
+        ingredients.forEach(ingredient -> {
+            allIngredients.append(ingredient.toString());
+            allIngredients.append(",\n");
+        });
         return allIngredients.toString();
     }
 
